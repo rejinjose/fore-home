@@ -1,0 +1,308 @@
+/*MAIN.CSS*/
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*This is main CSS file that contains custom style rules used in this template*/
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* Template Name: Micah.*/
+/* Version: 1.0 Initial Release*/
+/* Build Date: 02nd Jan 2015*/
+/* Author: Unbranded.*/
+/* Website: http://www.unbranded.co */
+/* Copyright: (C) 2015 */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------*/
+/* TABLE OF CONTENTS: */
+/*--------------------------------------------------------*/
+/* 01 - LAYOUT INITIALIZATION & COLOR PRESETS */
+/* 02 - HEADER, INTRO & NAVIGATION */
+/* 03 - COMMON ELEMENTS & TYPOGRAPHY */
+/* 04 - PAGES & SECTIONS SETUP*/
+/* 05 - FOOTER*/
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* 01 - LAYOUT INITIALIZATION & COLOR PRESETS */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+body
+{
+    overflow-x: hidden; 
+}
+body{
+	font-weight:300;
+	/*overflow-x:hidden !important; */
+}
+
+a, a:hover, a:focus{
+	text-decoration: none;
+}
+a:focus { 
+    	outline: none; 
+}
+
+.ease{
+	-webkit-transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		 -o-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+}
+.ease:hover{
+	-webkit-transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+		 -o-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+}
+.text-center > .img-responsive{
+	display: block;
+	display: inline-block;
+}
+p{
+	color: #444;
+	font-size: 12px;
+	line-height:21px;
+}
+h1,h2,h3,h4,h5,h6{
+	margin-top: 0;
+	font-weight: normal;
+}
+
+@media (min-width: 1024px) and (max-width: 5000px) {
+	.container{
+		max-width: 1140px;
+	}
+}
+/*Common Spacing and Padding*/
+.mastwrap.boxed{
+	margin: 0 12%;
+}
+.separator-section{
+	padding: 150px 0;
+}
+.add-top{
+	margin-top: 120px;
+}
+.add-bottom{
+	margin-bottom: 120px;
+}
+.add-top-half{
+	margin-top: 60px;
+}
+.add-bottom-half{
+	margin-bottom: 60px;
+}
+.add-top-quarter{
+	margin-top: 30px;
+}
+.add-bottom-quarter{
+	margin-bottom: 30px;
+}
+.pad-top{
+	padding-top: 120px;
+}
+.pad-bottom{
+	padding-bottom: 120px;
+}
+.pad{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.remove-top{
+	margin-top: 0;
+}
+.remove-bottom{
+	margin-bottom: 0;
+}
+.remove-pad-top{
+	padding-top: 0;
+}
+.remove-pad-bottom{
+	padding-bottom: 0;
+}
+
+.mob-center > .img-responsive{
+	display: inline-block;
+}
+.no-gutter{
+	margin-left: -15px !important;
+}
+.valign{
+	position: relative;
+  	top: 50%;
+  	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
+.absolute-overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.wallpaper{
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.poster-img{
+	background:url(../images/poster.jpg) center center no-repeat !important;
+	background-size: cover !important;
+}
+
+.fullwidth {
+	width: 100%;;
+}
+
+.fullheight {
+	height: 100vh;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.img-center-cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.col-no-padding {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.home-carousel .item {
+	position: relative;
+}
+
+.home-carousel .item .overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.85);
+}
+
+.home-carousel .item .content-wrap {
+	display: table;
+	height: 100vh;
+	position: relative;
+	z-index: 1;
+} 
+
+.home-carousel .item .content-wrap .content-block-area {
+	display: table-cell;
+	vertical-align: middle;
+} 
+
+.home-carousel .item .content-wrap .content-block-area .content-block {
+	height: 70vh;
+	position: relative;
+}
+
+.home-carousel .item .content-wrap .content-block-area .content-block .content-block-image {
+	width: 70%;
+    margin-left: 20%;
+	height: 100%;
+	position: relative;
+}
+
+.home-carousel .item .content-wrap .content-block-area .content-block .content-block-image .delivered-year{
+	position: absolute;
+	left: -70px;
+	bottom: 35px;
+	font-size: 12px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	color: #ffffff;
+	letter-spacing: 4px;
+}
+
+.home-carousel .item .content-wrap .content-block-area .content-block .content-block-image .delivered-year:after{
+	content: '';
+	display: inline-block;
+	width: 55px;
+	height: 1px;
+	background: #ffffff;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.home-carousel .item .content-wrap .content-block-area .content-block .fore-button-wrap {
+	position: absolute;
+	right: 0;
+	bottom: 50px;
+}
+
+a.fore-button{
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 5px 32px;
+	background: #044EF4;
+	color: #ffffff;
+	position: relative;
+
+}
+
+a.fore-button span{
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 21px;
+	letter-spacing: 4px;
+	font-weight: 700;
+}
+
+a.fore-button i {
+	color: #ffffff;
+	font-size: 40px;
+	line-height: 40px;
+	margin-left: 12px;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+
+.home-carousel .item .content-wrap .content-block-area .content-block .content-block-text .liner {
+	width: 75px;
+	height: 8px;
+	margin-bottom: 15px;
+	background: #044EF4;
+}
+
+.home-carousel .item .content-wrap .content-block-area .content-block .content-block-text {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 30vw;
+	transform: translateY(-50%);
+}
+
+.home-carousel .item .content-wrap .content-block-area .content-block .content-block-text h2 {
+	font-size: 80px;
+	line-height: 90px;
+	color: #ffffff;
+	letter-spacing: 6px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.home-carousel .item .content-wrap .content-block-area .content-block .content-block-text p {
+	font-size: 12px;
+	line-height: 19px;
+	color: #ffffff;
+	letter-spacing: 4px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+}
+
+.owl-nav button {
+	width: 50px;
+	height: 50px;
+	background: red !important;
+}
