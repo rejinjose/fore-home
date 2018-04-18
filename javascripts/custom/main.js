@@ -33,15 +33,24 @@
 
         // Delay Variables
         
+        var backgroundImageIn = 2000;
+        var foregroundImageIn = 2000;
         var segmentTextdelayValueInit = 1000;
         var segmentTextdelayOut = 1000;
-        var linerdelayValueInit = 1000;
-        var desctextInit = 1000;
+        var linerdelayValueInit = 2000;
+        var desctextInit = 2400;
         var descTextOut = 100;
-        var descTextIn = 2000;
+        var descTextIn = 1000;
         var descTextInactive = 100;
         var linerdelayOut = 100;
-        var linerdelayIn = 3800; 
+        var linerdelayIn = 3400; 
+        var buttonInit = 2000;
+        var buttonInnerInit = 2400;
+        var buttondelayOut = 500;
+        var buttonInnerdelayOut = 100;
+        var yeartextInit = 3000;
+        var yearTextOut = 500;
+        var yearTextIn = 1500;
 
         
         $(window).on('load',function() {
@@ -50,7 +59,8 @@
                 // Home Liner Initialization 
                 
                 $('.home-carousel').find('.content-block-text .liner').css('transition-delay', linerdelayValueInit+'ms');
-
+                $('.home-carousel').find('.fore-button-wrap a').css('transition-delay', buttonInit+'ms');
+                $('.home-carousel').find('.fore-button-wrap a *').css('transition-delay', buttonInnerInit+'ms');
                 homeOwl();
             },1500);
 
@@ -108,7 +118,19 @@
                     $('.home-carousel .owl-item.active .content-block-text .descript').css({
                         'transition-delay':desctextInit+'ms',
                         'width':'100%'
-                    });   
+                    });  
+                    
+                    // Home Content Year Section
+                    $('.home-carousel .delivered-year').each(function() {
+                        var contentYearBlkWdth = $(this).find('p').width();
+                        $(this).find('p span').width(contentYearBlkWdth);
+                        $(this).find('p').width(0);
+                    });
+
+                    $('.home-carousel .owl-item.active .delivered-year p').css({
+                        'transition-delay':yeartextInit+'ms',
+                        'width':'100%'
+                    }); 
 
                     homeCarousel.on('translate.owl.carousel', function(event) {
                 
@@ -120,14 +142,21 @@
                                 segmentTextdelayValue = segmentTextdelayValue + 200;
                             });
 
-            
+                            $(this).find('.background-image-section').css('transition-delay', backgroundImageIn+'ms');
+                            $(this).find('.content-block-image-section').css('transition-delay', foregroundImageIn+'ms');
+
                             $(this).find('.content-block-text .liner').css('transition-delay', linerdelayIn+'ms');
 
-                            $(this).find('.content-block-text .descript').css({
-                                'transition-delay':descTextIn+'ms',
-                                'width':'100%'
-                            });
+                            $(this).find('.fore-button-wrap a').css('transition-delay', '3400ms');
+                            $(this).find('.fore-button-wrap a *').css('transition-delay', '3800ms');
 
+                        });
+
+                        homeCarousel.find('.owl-item.active .background-image-section').css({
+                            'transition-delay':'0ms'
+                        });
+                        homeCarousel.find('.owl-item.active .content-block-image-section').css({
+                            'transition-delay':'0ms'
                         });
 
                         homeCarousel.find('.owl-item.active .segment-text').each(function() {              
@@ -138,8 +167,21 @@
                             $(this).css('transition-delay', linerdelayOut+'ms');
                         });
 
+                        homeCarousel.find('.owl-item.active .fore-button-wrap a *').each(function() {              
+                            $(this).css('transition-delay', buttonInnerdelayOut+'ms');
+                        });
+
+                        homeCarousel.find('.owl-item.active .fore-button-wrap a').each(function() {              
+                            $(this).css('transition-delay', buttondelayOut+'ms');
+                        });
+
                         homeCarousel.find('.owl-item.active .content-block-text .descript').css({
                             'transition-delay':descTextOut+'ms',
+                            'opacity':'0'
+                        });
+
+                        homeCarousel.find('.owl-item.active .delivered-year p').css({
+                            'transition-delay':yearTextOut+'ms',
                             'opacity':'0'
                         });
 
@@ -149,12 +191,20 @@
                     homeCarousel.on('translated.owl.carousel', function(event) {
                         homeCarousel.find('.owl-item .content-block-text .descript').css({
                             'width':'0%',
-                            'opacity':'1',
-                            'transition-delay':descTextInactive+'ms'
+                            'opacity':'1'
                         });
                         homeCarousel.find('.owl-item.active .content-block-text .descript').css({
                             'width':'100%',
                             'transition-delay':descTextIn+'ms'
+                        });
+
+                        homeCarousel.find('.owl-item .delivered-year p').css({
+                            'width':'0%',
+                            'opacity':'1'
+                        });
+                        homeCarousel.find('.owl-item.active .delivered-year p').css({
+                            'width':'100%',
+                            'transition-delay':yearTextIn+'ms'
                         });
                     });    
 
@@ -228,7 +278,7 @@
            
 
             // Parallaxify
-            $('.parallaxify').plaxify()
+            $('.parallaxify').plaxify();
             $.plax.enable();
 
             heroSliderContentGrinding();
